@@ -2,25 +2,25 @@
 
 > **Work in Progress:** This repository is currently undergoing refactoring to optimize Monte Carlo performance via NumPy vectorization and modularize simulation modules. Core simulation logic and hedging engine results are fully functional.
 
-A computational framework for evaluating option hedging efficiency, tracking error, and P&L distributions under continuous-time stochastic dynamics.
+A computational framework for evaluating option hedging efficiency, tracking error, and PnL distributions under continuous-time stochastic dynamics.
 
 ## Features
 - **Monte Carlo Engine:** Simulates asset price trajectories via Euler-Maruyama discretization under Black-Scholes and stochastic volatility models.
 - **Dynamic Delta Hedging:** Simulates discrete-time rebalancing strategies to evaluate tracking error and hedging effectiveness.
-- **P&L & Risk Analysis:** Quantifies residual P&L variance and hedging slippage under discrete rebalancing frequencies.
+- **PnL & Risk Analysis:** Quantifies residual PnL variance and hedging slippage under discrete rebalancing frequencies.
 
 ## Mathematical Framework
 Asset trajectories are discretized over time step $dt$ using Euler-Maruyama:
 
 $$S_{t+dt} = S_t + \mu S_t dt + \sigma S_t \sqrt{dt} \, Z_t, \quad Z_t \sim \mathcal{N}(0,1)$$
 
-Dynamic Delta $\Delta(t) = \frac{\partial V}{\partial S}$ is rebalanced across discrete time intervals to monitor residual P&L Variance. For single asset hedging:
-$$\text{P\&L}(t_1)= $V_0- \Delta_{t_0}S_{t_0}$
+Dynamic Delta $\Delta(t) = \frac{\partial V}{\partial S}$ is rebalanced across discrete time intervals to monitor residual PnL Variance. For single asset hedging:
+$$\text{PnL}(t_1)= $V_0- \Delta_{t_0}S_{t_0}$
 
 
-$$\text{P\&L}(t_{i+1})= \text{P \&L}(t_{i})e^{r dt}- (\Delta(t_{i+1})-\Delta(t_{i}))S(t_{i+1})$$
+$$\text{PnL}(t_{i+1})= \text{P nL}(t_{i})e^{r dt}- (\Delta(t_{i+1})-\Delta(t_{i}))S(t_{i+1})$$
 
-$$\text{P\&L}(T)= \text{P \&L}(T-dt)e^{r dt}- \text{max}(S(T)-K,0)+\Delta(T-dt)S(T)$$
+$$\text{PnL}(T)= \text{P nL}(T-dt)e^{r dt}- \text{max}(S(T)-K,0)+\Delta(T-dt)S(T)$$
 
 
 ##Discussion Points
