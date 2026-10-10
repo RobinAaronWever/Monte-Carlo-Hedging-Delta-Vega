@@ -16,7 +16,7 @@ $$S_{t+dt} = S_t + \mu S_t dt + \sigma S_t \sqrt{dt} \, Z_t, \quad Z_t \sim \mat
 
 Dynamic Delta $\Delta(t) = \frac{\partial V}{\partial S}$ is rebalanced across discrete time intervals to monitor residual PnL Variance. For single asset hedging:
 
-$$\text{PnL}(t_1)= $V_0- \Delta_{t_0}S_{t_0}$$
+$$\text{PnL}(t_1)= V_0- \Delta_{t_0}S_{t_0}$$
 
 $$\text{PnL}(t_{i+1})= \text{P nL}(t_{i})e^{r dt}- (\Delta(t_{i+1})-\Delta(t_{i}))S(t_{i+1})$$
 
