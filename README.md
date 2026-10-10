@@ -1,6 +1,6 @@
 # Monte Carlo Simulation & Delta Hedging Engine
 
-> **Work in Progress:** This repository is currently undergoing refactoring to optimize Monte Carlo performance via NumPy vectorization and modularize simulation modules. Core simulation logic and hedging engine results are fully functional.
+> **Work in Progress:** This repository is currently undergoing refactoring to optimize Monte Carlo performance and modularize simulation modules. Core simulation logic and hedging engine results are fully functional.
 
 A computational framework for evaluating option hedging efficiency, tracking error, and PnL distributions under continuous-time stochastic dynamics.
 
