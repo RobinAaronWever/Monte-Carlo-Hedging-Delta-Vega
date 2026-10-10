@@ -23,13 +23,13 @@ $$\text{PnL}(t_{i+1})= \text{P nL}(t_{i})e^{r dt}- (\Delta(t_{i+1})-\Delta(t_{i}
 $$\text{PnL}(T)= \text{P nL}(T-dt)e^{r dt}- \text{max}(S(T)-K,0)+\Delta(T-dt)S(T)$$
 
 
-##Discussion Points
-Discretizing the Heston model is a bit more difficult than the Black-Scholes model because of the CIR process, i.e., the variance process. The SPDE that governs its dynamics ensures nonnegativity, however this condition is revoked once we apply Euler-Maruyama. Therefore, we used conditional sampling, where $v(t)|v(s)$ follows a $\chi$-squared distribution that depends on $s,t$, and many other parameters. The correlation is then analytically injected in the discretization step via:
+## Discussion Points
+Discretizing the Heston model is a bit more difficult than the Black-Scholes model because of the CIR process, i.e., the variance process. The SDE that governs its dynamics ensures nonnegativity; however, this condition is violated once we apply Euler-Maruyama. Therefore, conditional sampling is used, where $v(t)|v(s)$ follows a noncentral $\chi$-squared distribution, depending on $s,t$, etc. The correlation is then analytically injected in the discretization step via:
 $$\sqrt{(k_3*v_t)}*Z$$
 
-The histograms show that the BS model performs better in both the single-asset as well as the 2-asset hedging strategy. This can be seen by the high-narrow peaks of the BS histograms. This is surprising as one would assume that the hedging strategy that uses the same model as the underlying would perform better. 
+The histograms show that the BS model performs better in both the single-asset portfolio and the 2-asset portfolio. This can be seen by the high, narrow peaks of the BS histograms. This is surprising, as one would assume that the hedging strategy that uses the same model as the underlying would perform better. 
 
-Lastly, we introduced transaction costs into our model and compared weekly to daily hedging strategies. As expected, for high transaction costs weekly hedging performed the best and vice versa for low transaction costs. 
+Lastly, we introduced transaction costs into our model and compared weekly to daily hedging strategies. As expected, for high transaction costs, weekly hedging performed the best and vice versa for low transaction costs. 
 
 
 ## Project Structure
